@@ -1,0 +1,586 @@
+Nov 15 06:29:36 automation kernel: [223278.409759] INFO: rcu_sched self-detected stall on CPU
+Nov 15 06:29:36 automation kernel: [223278.410371] INFO: rcu_sched self-detected stall on CPU
+Nov 15 06:29:36 automation kernel: [223278.439808] 	0-...!: (1 ticks this GP) idle=2be/140000000000001/0 softirq=2013888/2013891 fqs=0 
+Nov 15 06:29:36 automation kernel: [223278.441840] 	 (t=23989 jiffies g=919408 c=919407 q=52)
+Nov 15 06:29:36 automation kernel: [223278.441911] 	1-...!: (1 ticks this GP) idle=6be/1/0 softirq=2241981/2241981 fqs=0 
+Nov 15 06:29:36 automation kernel: [223278.442847] rcu_sched kthread starved for 23989 jiffies! g919408 c919407 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=1
+Nov 15 06:29:36 automation kernel: [223278.442849] rcu_sched       I    0     8      2 0x80000000
+Nov 15 06:29:36 automation kernel: [223278.442853] Call Trace:
+Nov 15 06:29:36 automation kernel: [223278.444519]  __schedule+0x24e/0x890
+Nov 15 06:29:36 automation kernel: [223278.444525]  schedule+0x2c/0x80
+Nov 15 06:29:36 automation kernel: [223278.445711] 	 (t=23989 jiffies g=919408 c=919407 q=52)
+Nov 15 06:29:36 automation kernel: [223278.447560]  schedule_timeout+0x15d/0x370
+Nov 15 06:29:36 automation kernel: [223278.447822]  ? __next_timer_interrupt+0xe0/0xe0
+Nov 15 06:29:36 automation kernel: [223278.447951]  rcu_gp_kthread+0x53a/0x980
+Nov 15 06:29:36 automation kernel: [223278.448012]  kthread+0x121/0x140
+Nov 15 06:29:36 automation kernel: [223278.448019]  ? rcu_note_context_switch+0x150/0x150
+Nov 15 06:29:36 automation kernel: [223278.449602] rcu_sched kthread starved for 23989 jiffies! g919408 c919407 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=1
+Nov 15 06:29:36 automation kernel: [223278.449585]  ? kthread_create_worker_on_cpu+0x70/0x70
+Nov 15 06:29:36 automation kernel: [223278.449610]  ret_from_fork+0x35/0x40
+Nov 15 06:29:36 automation kernel: [223278.452941] rcu_sched       I    0     8      2 0x80000000
+Nov 15 06:29:36 automation kernel: [223278.452945] Call Trace:
+Nov 15 06:29:36 automation kernel: [223278.452956]  __schedule+0x24e/0x890
+Nov 15 06:29:36 automation kernel: [223278.452957]  schedule+0x2c/0x80
+Nov 15 06:29:36 automation kernel: [223278.452959]  schedule_timeout+0x15d/0x370
+Nov 15 06:29:36 automation kernel: [223278.452962]  ? __next_timer_interrupt+0xe0/0xe0
+Nov 15 06:29:36 automation kernel: [223278.452965]  rcu_gp_kthread+0x53a/0x980
+Nov 15 06:29:36 automation kernel: [223278.452968]  kthread+0x121/0x140
+Nov 15 06:29:36 automation kernel: [223278.452969]  ? rcu_note_context_switch+0x150/0x150
+Nov 15 06:29:36 automation kernel: [223278.452971]  ? kthread_create_worker_on_cpu+0x70/0x70
+Nov 15 06:29:36 automation kernel: [223278.452973]  ret_from_fork+0x35/0x40
+Nov 15 06:29:36 automation kernel: [223278.453137] NMI backtrace for cpu 0
+Nov 15 06:29:36 automation kernel: [223278.453202] CPU: 0 PID: 18448 Comm: python3.7 Tainted: G             L   4.15.0-213-generic #224-Ubuntu
+Nov 15 06:29:36 automation kernel: [223278.453203] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 15 06:29:36 automation kernel: [223278.453204] Call Trace:
+Nov 15 06:29:36 automation kernel: [223278.453295]  <IRQ>
+Nov 15 06:29:36 automation kernel: [223278.453299]  dump_stack+0x6d/0x8b
+Nov 15 06:29:36 automation kernel: [223278.453928]  nmi_cpu_backtrace+0x94/0xa0
+Nov 15 06:29:36 automation kernel: [223278.456228]  ? lapic_can_unplug_cpu+0xb0/0xb0
+Nov 15 06:29:36 automation kernel: [223278.456237]  nmi_trigger_cpumask_backtrace+0xe7/0x130
+Nov 15 06:29:36 automation kernel: [223278.456266]  arch_trigger_cpumask_backtrace+0x19/0x20
+Nov 15 06:29:36 automation kernel: [223278.456270]  rcu_dump_cpu_stacks+0xa3/0xd5
+Nov 15 06:29:36 automation kernel: [223278.456273]  rcu_check_callbacks+0x6cd/0x8e0
+Nov 15 06:29:36 automation kernel: [223278.457027]  ? account_user_time+0x9e/0xb0
+Nov 15 06:29:36 automation kernel: [223278.457329]  ? tick_sched_do_timer+0x50/0x50
+Nov 15 06:29:36 automation kernel: [223278.457332]  update_process_times+0x2f/0x60
+Nov 15 06:29:36 automation kernel: [223278.457334]  tick_sched_handle+0x26/0x70
+Nov 15 06:29:36 automation kernel: [223278.457336]  ? tick_sched_do_timer+0x42/0x50
+Nov 15 06:29:36 automation kernel: [223278.457337]  tick_sched_timer+0x39/0x80
+Nov 15 06:29:36 automation kernel: [223278.457338]  __hrtimer_run_queues+0xdf/0x230
+Nov 15 06:29:36 automation kernel: [223278.457340]  hrtimer_interrupt+0x97/0x180
+Nov 15 06:29:36 automation kernel: [223278.457385]  smp_apic_timer_interrupt+0x6f/0x140
+Nov 15 06:29:36 automation kernel: [223278.457387]  apic_timer_interrupt+0x90/0xa0
+Nov 15 06:29:36 automation kernel: [223278.457388]  </IRQ>
+Nov 15 06:29:36 automation kernel: [223278.457722] RIP: 0033:0x4fd762
+Nov 15 06:29:36 automation kernel: [223278.457724] RSP: 002b:00007ffe6caef050 EFLAGS: 00010246 ORIG_RAX: ffffffffffffff11
+Nov 15 06:29:36 automation kernel: [223278.457726] RAX: 0000000000f64e68 RBX: 000000000000036b RCX: 0000000000f651d2
+Nov 15 06:29:36 automation kernel: [223278.457727] RDX: 0000000000f64e68 RSI: 0000000000f64e78 RDI: 0000000000f651d0
+Nov 15 06:29:36 automation kernel: [223278.457728] RBP: 0000000000000000 R08: 8080808080808080 R09: 0000000000f64e60
+Nov 15 06:29:36 automation kernel: [223278.457729] R10: 00007f5ca36ae3b0 R11: 0000000000002499 R12: 0000000000f64e67
+Nov 15 06:29:36 automation kernel: [223278.457729] R13: 000000000000036b R14: 0000000000f64e67 R15: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.457735] Sending NMI from CPU 0 to CPUs 1:
+Nov 15 06:29:36 automation kernel: [223278.471519] NMI backtrace for cpu 1
+Nov 15 06:29:36 automation kernel: [223278.471520] CPU: 1 PID: 0 Comm: swapper/1 Tainted: G             L   4.15.0-213-generic #224-Ubuntu
+Nov 15 06:29:36 automation kernel: [223278.471521] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 15 06:29:36 automation kernel: [223278.471522] RIP: 0010:__pv_queued_spin_lock_slowpath+0xee/0x290
+Nov 15 06:29:36 automation kernel: [223278.471522] RSP: 0018:ffff900b3fd03dd0 EFLAGS: 00010006
+Nov 15 06:29:36 automation kernel: [223278.471523] RAX: 0000000000000003 RBX: ffffffffa90aa800 RCX: 0000000000000008
+Nov 15 06:29:36 automation kernel: [223278.471523] RDX: 00000000000076d6 RSI: 0000000000000003 RDI: 0000000000000046
+Nov 15 06:29:36 automation kernel: [223278.471524] RBP: ffff900b3fd03e08 R08: 0000000000000008 R09: 00000000000000e0
+Nov 15 06:29:36 automation kernel: [223278.471525] R10: 0000000000000001 R11: 0000000000000001 R12: ffff900b3fd27580
+Nov 15 06:29:36 automation kernel: [223278.471525] R13: 0000000000000001 R14: 0000000000000100 R15: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.471526] FS:  0000000000000000(0000) GS:ffff900b3fd00000(0000) knlGS:0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.471526] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Nov 15 06:29:36 automation kernel: [223278.471527] CR2: 000055816f2aed80 CR3: 0000000078f78000 CR4: 00000000000006e0
+Nov 15 06:29:36 automation kernel: [223278.471527] Call Trace:
+Nov 15 06:29:36 automation kernel: [223278.471527]  <IRQ>
+Nov 15 06:29:36 automation kernel: [223278.471527]  _raw_spin_lock_irqsave+0x37/0x40
+Nov 15 06:29:36 automation kernel: [223278.471528]  rcu_dump_cpu_stacks+0x50/0xd5
+Nov 15 06:29:36 automation kernel: [223278.471528]  rcu_check_callbacks+0x6cd/0x8e0
+Nov 15 06:29:36 automation kernel: [223278.471528]  ? tick_sched_do_timer+0x50/0x50
+Nov 15 06:29:36 automation kernel: [223278.471529]  update_process_times+0x2f/0x60
+Nov 15 06:29:36 automation kernel: [223278.471529]  tick_sched_handle+0x26/0x70
+Nov 15 06:29:36 automation kernel: [223278.471529]  tick_sched_timer+0x39/0x80
+Nov 15 06:29:36 automation kernel: [223278.471530]  __hrtimer_run_queues+0xdf/0x230
+Nov 15 06:29:36 automation kernel: [223278.471530]  hrtimer_interrupt+0x97/0x180
+Nov 15 06:29:36 automation kernel: [223278.471530]  smp_apic_timer_interrupt+0x6f/0x140
+Nov 15 06:29:36 automation kernel: [223278.471531]  apic_timer_interrupt+0x90/0xa0
+Nov 15 06:29:36 automation kernel: [223278.471531]  </IRQ>
+Nov 15 06:29:36 automation kernel: [223278.471531] RIP: 0010:native_safe_halt+0x12/0x20
+Nov 15 06:29:36 automation kernel: [223278.471532] RSP: 0018:ffffa9fb0037be80 EFLAGS: 00010246 ORIG_RAX: ffffffffffffff11
+Nov 15 06:29:36 automation kernel: [223278.471532] RAX: ffffffffa85cfa20 RBX: 0000000000000001 RCX: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.471533] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.471533] RBP: ffffa9fb0037be80 R08: 0000e8fc6ecf6f56 R09: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.471534] R10: 0000000000000000 R11: 7fffffffffffffff R12: 0000000000000001
+Nov 15 06:29:36 automation kernel: [223278.471534] R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.471534]  ? __sched_text_end+0x1/0x1
+Nov 15 06:29:36 automation kernel: [223278.471535]  default_idle+0x20/0x100
+Nov 15 06:29:36 automation kernel: [223278.471535]  arch_cpu_idle+0x15/0x20
+Nov 15 06:29:36 automation kernel: [223278.471535]  default_idle_call+0x23/0x30
+Nov 15 06:29:36 automation kernel: [223278.471536]  do_idle+0x172/0x1f0
+Nov 15 06:29:36 automation kernel: [223278.471536]  cpu_startup_entry+0x73/0x80
+Nov 15 06:29:36 automation kernel: [223278.471536]  start_secondary+0x1ab/0x200
+Nov 15 06:29:36 automation kernel: [223278.471536]  secondary_startup_64+0xa5/0xb0
+Nov 15 06:29:36 automation kernel: [223278.471537] Code: 41 bd 01 00 00 00 41 be 00 01 00 00 3c 02 0f 94 c0 0f b6 c0 48 89 45 c8 41 c6 44 24 44 00 ba 00 80 00 00 c6 43 01 01 eb 0b f3 90 <83> ea 01 0f 84 08 01 00 00 0f b6 03 84 c0 75 ee 44 89 f0 f0 66 
+Nov 15 06:29:36 automation kernel: [223278.471639] Sending NMI from CPU 1 to CPUs 0:
+Nov 15 06:29:36 automation kernel: [223278.473756] NMI backtrace for cpu 0
+Nov 15 06:29:36 automation kernel: [223278.473812] CPU: 0 PID: 18448 Comm: python3.7 Tainted: G             L   4.15.0-213-generic #224-Ubuntu
+Nov 15 06:29:36 automation kernel: [223278.473814] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 15 06:29:36 automation kernel: [223278.473814] RIP: 0010:__wake_up_common+0x40/0x130
+Nov 15 06:29:36 automation kernel: [223278.473815] RSP: 0000:ffff900b3fc03da0 EFLAGS: 00010002
+Nov 15 06:29:36 automation kernel: [223278.473816] RAX: ffffa9fb01bafe18 RBX: ffffffffa9063cf0 RCX: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.473817] RDX: 0000000000000001 RSI: 0000000000000001 RDI: ffffa9fb01bafe00
+Nov 15 06:29:36 automation kernel: [223278.473817] RBP: ffff900b3fc03de0 R08: 0000000000000000 R09: ffff900b3fc03df8
+Nov 15 06:29:36 automation kernel: [223278.473817] R10: 0000000000000000 R11: 0000000000000001 R12: 0000000000000001
+Nov 15 06:29:36 automation kernel: [223278.473818] R13: ffffffffa9063cf8 R14: 0000000000000000 R15: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.473818] FS:  00007f5ca680d680(0000) GS:ffff900b3fc00000(0000) knlGS:0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.473819] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Nov 15 06:29:36 automation kernel: [223278.473819] CR2: 0000000000f66000 CR3: 0000000074456000 CR4: 00000000000006f0
+Nov 15 06:29:36 automation kernel: [223278.473820] Call Trace:
+Nov 15 06:29:36 automation kernel: [223278.473820]  <IRQ>
+Nov 15 06:29:36 automation kernel: [223278.473820]  ? __raw_callee_save___pv_queued_spin_unlock_slowpath+0x15/0x24
+Nov 15 06:29:36 automation kernel: [223278.473821]  __wake_up_common_lock+0x80/0xc0
+Nov 15 06:29:36 automation kernel: [223278.473821]  __wake_up+0x13/0x20
+Nov 15 06:29:36 automation kernel: [223278.473821]  wake_up_klogd_work_func+0x40/0x60
+Nov 15 06:29:36 automation kernel: [223278.473822]  irq_work_run_list+0x52/0x80
+Nov 15 06:29:36 automation kernel: [223278.473822]  ? tick_sched_do_timer+0x50/0x50
+Nov 15 06:29:36 automation kernel: [223278.473822]  irq_work_tick+0x3b/0x50
+Nov 15 06:29:36 automation kernel: [223278.473823]  update_process_times+0x42/0x60
+Nov 15 06:29:36 automation kernel: [223278.473823]  tick_sched_handle+0x26/0x70
+Nov 15 06:29:36 automation kernel: [223278.473823]  ? tick_sched_do_timer+0x42/0x50
+Nov 15 06:29:36 automation kernel: [223278.473824]  tick_sched_timer+0x39/0x80
+Nov 15 06:29:36 automation kernel: [223278.473824]  __hrtimer_run_queues+0xdf/0x230
+Nov 15 06:29:36 automation kernel: [223278.473824]  hrtimer_interrupt+0x97/0x180
+Nov 15 06:29:36 automation kernel: [223278.473824]  smp_apic_timer_interrupt+0x6f/0x140
+Nov 15 06:29:36 automation kernel: [223278.473825]  apic_timer_interrupt+0x90/0xa0
+Nov 15 06:29:36 automation kernel: [223278.473825]  </IRQ>
+Nov 15 06:29:36 automation kernel: [223278.473825] RIP: 0033:0x4fd762
+Nov 15 06:29:36 automation kernel: [223278.473825] RSP: 002b:00007ffe6caef050 EFLAGS: 00010246 ORIG_RAX: ffffffffffffff11
+Nov 15 06:29:36 automation kernel: [223278.473972] RAX: 0000000000f64e68 RBX: 000000000000036b RCX: 0000000000f651d2
+Nov 15 06:29:36 automation kernel: [223278.473973] RDX: 0000000000f64e68 RSI: 0000000000f64e78 RDI: 0000000000f651d0
+Nov 15 06:29:36 automation kernel: [223278.473973] RBP: 0000000000000000 R08: 8080808080808080 R09: 0000000000f64e60
+Nov 15 06:29:36 automation kernel: [223278.473974] R10: 00007f5ca36ae3b0 R11: 0000000000002499 R12: 0000000000f64e67
+Nov 15 06:29:36 automation kernel: [223278.473974] R13: 000000000000036b R14: 0000000000f64e67 R15: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.473975] Code: 48 83 ec 18 4d 85 c9 74 0a 41 f6 01 04 0f 85 9b 00 00 00 49 8b 45 08 48 8d 78 e8 48 8d 47 18 49 83 c5 08 89 55 c4 49 39 c5 74 5b <48> 8b 47 18 4d 89 cc 4c 89 45 c8 89 4d d0 89 75 d4 31 db 4c 8d 
+Nov 15 06:29:36 automation kernel: [223278.473984] NMI backtrace for cpu 1
+Nov 15 06:29:36 automation kernel: [223278.473987] CPU: 1 PID: 0 Comm: swapper/1 Tainted: G             L   4.15.0-213-generic #224-Ubuntu
+Nov 15 06:29:36 automation kernel: [223278.473987] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 15 06:29:36 automation kernel: [223278.473988] Call Trace:
+Nov 15 06:29:36 automation kernel: [223278.473989]  <IRQ>
+Nov 15 06:29:36 automation kernel: [223278.473992]  dump_stack+0x6d/0x8b
+Nov 15 06:29:36 automation kernel: [223278.473994]  nmi_cpu_backtrace+0x94/0xa0
+Nov 15 06:29:36 automation kernel: [223278.473998]  ? lapic_can_unplug_cpu+0xb0/0xb0
+Nov 15 06:29:36 automation kernel: [223278.473999]  nmi_trigger_cpumask_backtrace+0xe7/0x130
+Nov 15 06:29:36 automation kernel: [223278.474000]  arch_trigger_cpumask_backtrace+0x19/0x20
+Nov 15 06:29:36 automation kernel: [223278.474002]  rcu_dump_cpu_stacks+0xa3/0xd5
+Nov 15 06:29:36 automation kernel: [223278.474004]  rcu_check_callbacks+0x6cd/0x8e0
+Nov 15 06:29:36 automation kernel: [223278.474006]  ? tick_sched_do_timer+0x50/0x50
+Nov 15 06:29:36 automation kernel: [223278.474007]  update_process_times+0x2f/0x60
+Nov 15 06:29:36 automation kernel: [223278.474008]  tick_sched_handle+0x26/0x70
+Nov 15 06:29:36 automation kernel: [223278.474009]  tick_sched_timer+0x39/0x80
+Nov 15 06:29:36 automation kernel: [223278.474010]  __hrtimer_run_queues+0xdf/0x230
+Nov 15 06:29:36 automation kernel: [223278.474012]  hrtimer_interrupt+0x97/0x180
+Nov 15 06:29:36 automation kernel: [223278.474014]  smp_apic_timer_interrupt+0x6f/0x140
+Nov 15 06:29:36 automation kernel: [223278.474015]  apic_timer_interrupt+0x90/0xa0
+Nov 15 06:29:36 automation kernel: [223278.474016]  </IRQ>
+Nov 15 06:29:36 automation kernel: [223278.474018] RIP: 0010:native_safe_halt+0x12/0x20
+Nov 15 06:29:36 automation kernel: [223278.474018] RSP: 0018:ffffa9fb0037be80 EFLAGS: 00010246 ORIG_RAX: ffffffffffffff11
+Nov 15 06:29:36 automation kernel: [223278.474019] RAX: ffffffffa85cfa20 RBX: 0000000000000001 RCX: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.474020] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.474021] RBP: ffffa9fb0037be80 R08: 0000e8fc6ecf6f56 R09: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.474021] R10: 0000000000000000 R11: 7fffffffffffffff R12: 0000000000000001
+Nov 15 06:29:36 automation kernel: [223278.474058] R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+Nov 15 06:29:36 automation kernel: [223278.474061]  ? __sched_text_end+0x1/0x1
+Nov 15 06:29:36 automation kernel: [223278.474062]  default_idle+0x20/0x100
+Nov 15 06:29:36 automation kernel: [223278.474065]  arch_cpu_idle+0x15/0x20
+Nov 15 06:29:36 automation kernel: [223278.474066]  default_idle_call+0x23/0x30
+Nov 15 06:29:36 automation kernel: [223278.474068]  do_idle+0x172/0x1f0
+Nov 15 06:29:36 automation kernel: [223278.474070]  cpu_startup_entry+0x73/0x80
+Nov 15 06:29:36 automation kernel: [223278.474071]  start_secondary+0x1ab/0x200
+Nov 15 06:29:36 automation kernel: [223278.474075]  secondary_startup_64+0xa5/0xb0
+Nov 15 06:29:36 automation systemd[1]: systemd-udevd.service: Watchdog timeout (limit 3min)!
+Nov 15 06:29:36 automation systemd[1]: systemd-udevd.service: Killing process 16744 (systemd-udevd) with signal SIGABRT.
+Nov 15 06:29:36 automation systemd[1]: systemd-logind.service: Watchdog timeout (limit 3min)!
+Nov 15 06:29:36 automation systemd[1]: systemd-logind.service: Killing process 13473 (systemd-logind) with signal SIGABRT.
+Nov 15 06:29:36 automation systemd[1]: systemd-udevd.service: Main process exited, code=dumped, status=6/ABRT
+Nov 15 06:29:36 automation systemd[1]: systemd-udevd.service: Failed with result 'watchdog'.
+Nov 15 06:29:36 automation systemd[1]: systemd-udevd.service: Service has no hold-off time, scheduling restart.
+Nov 15 06:29:36 automation systemd[1]: systemd-udevd.service: Scheduled restart job, restart counter is at 12.
+Nov 15 06:29:36 automation systemd[1]: Stopped udev Kernel Device Manager.
+Nov 15 06:29:36 automation systemd[1]: Starting udev Kernel Device Manager...
+Nov 15 06:29:37 automation systemd[1]: Started udev Kernel Device Manager.
+Nov 15 06:29:37 automation systemd[1]: systemd-logind.service: Main process exited, code=dumped, status=6/ABRT
+Nov 15 06:29:37 automation systemd[1]: systemd-logind.service: Failed with result 'watchdog'.
+Nov 15 06:29:37 automation systemd[1]: systemd-logind.service: Service has no hold-off time, scheduling restart.
+Nov 15 06:29:37 automation systemd[1]: systemd-logind.service: Scheduled restart job, restart counter is at 9.
+Nov 15 06:29:37 automation systemd[1]: Stopped Login Service.
+Nov 15 06:29:37 automation systemd[1]: Starting Login Service...
+Nov 15 06:29:37 automation systemd[1]: Started Login Service.
+Nov 15 06:34:37 automation systemd[1]: systemd-udevd.service: Watchdog timeout (limit 3min)!
+Nov 15 06:34:37 automation systemd[1]: systemd-udevd.service: Killing process 18462 (systemd-udevd) with signal SIGABRT.
+Nov 15 06:34:37 automation systemd[1]: systemd-timesyncd.service: Watchdog timeout (limit 3min)!
+Nov 15 06:34:37 automation systemd[1]: systemd-timesyncd.service: Killing process 13474 (systemd-timesyn) with signal SIGABRT.
+Nov 15 06:34:37 automation systemd[1]: systemd-logind.service: Watchdog timeout (limit 3min)!
+Nov 15 06:34:37 automation systemd[1]: systemd-logind.service: Killing process 18480 (systemd-logind) with signal SIGABRT.
+Nov 15 06:34:37 automation systemd[1]: systemd-udevd.service: Main process exited, code=dumped, status=6/ABRT
+Nov 15 06:34:37 automation systemd[1]: systemd-udevd.service: Failed with result 'watchdog'.
+Nov 15 06:34:37 automation systemd[1]: systemd-udevd.service: Service has no hold-off time, scheduling restart.
+Nov 15 06:34:37 automation systemd[1]: systemd-udevd.service: Scheduled restart job, restart counter is at 13.
+Nov 15 06:34:37 automation systemd[1]: Stopped udev Kernel Device Manager.
+Nov 15 06:34:37 automation systemd[1]: Starting udev Kernel Device Manager...
+Nov 15 06:34:37 automation systemd[1]: systemd-timesyncd.service: Main process exited, code=dumped, status=6/ABRT
+Nov 15 06:34:37 automation systemd[1]: systemd-timesyncd.service: Failed with result 'watchdog'.
+Nov 15 06:34:37 automation systemd[1]: systemd-timesyncd.service: Service has no hold-off time, scheduling restart.
+Nov 15 06:34:37 automation systemd[1]: systemd-timesyncd.service: Scheduled restart job, restart counter is at 8.
+Nov 15 06:34:37 automation systemd[1]: Stopped Network Time Synchronization.
+Nov 15 06:34:38 automation systemd[1]: Starting Network Time Synchronization...
+Nov 15 06:34:38 automation systemd[1]: Started udev Kernel Device Manager.
+Nov 15 06:34:38 automation systemd[1]: systemd-logind.service: Main process exited, code=dumped, status=6/ABRT
+Nov 15 06:34:38 automation systemd[1]: systemd-logind.service: Failed with result 'watchdog'.
+Nov 15 06:34:38 automation systemd[1]: systemd-logind.service: Service has no hold-off time, scheduling restart.
+Nov 15 06:34:38 automation systemd[1]: systemd-logind.service: Scheduled restart job, restart counter is at 10.
+Nov 15 06:34:38 automation systemd[1]: Stopped Login Service.
+Nov 15 06:34:38 automation systemd[1]: Starting Login Service...
+Nov 15 06:34:38 automation systemd[1]: Started Login Service.
+Nov 15 06:34:38 automation systemd[1]: Started Network Time Synchronization.
+Nov 15 06:34:54 automation systemd-timesyncd[18992]: Timed out waiting for reply from [2620:2d:4000:1::3f]:123 (ntp.ubuntu.com).
+Nov 15 06:35:05 automation systemd-timesyncd[18992]: Timed out waiting for reply from [2620:2d:4000:1::40]:123 (ntp.ubuntu.com).
+Nov 15 06:35:15 automation systemd-timesyncd[18992]: Timed out waiting for reply from [2620:2d:4000:1::41]:123 (ntp.ubuntu.com).
+Nov 15 06:35:15 automation systemd-timesyncd[18992]: Synchronized to time server 185.125.190.57:123 (ntp.ubuntu.com).
+Nov 15 15:36:57 automation systemd[1]: Starting Ubuntu Advantage APT and MOTD Messages...
+Nov 15 15:36:58 automation systemd[1]: systemd-timesyncd.service: Watchdog timeout (limit 3min)!
+Nov 15 15:36:58 automation systemd[1]: systemd-timesyncd.service: Killing process 18992 (systemd-timesyn) with signal SIGABRT.
+Nov 15 15:36:58 automation systemd[1]: systemd-networkd.service: Watchdog timeout (limit 3min)!
+Nov 15 15:36:58 automation systemd[1]: systemd-networkd.service: Killing process 9583 (systemd-network) with signal SIGABRT.
+Nov 15 15:36:58 automation systemd[1]: systemd-networkd.service: Main process exited, code=dumped, status=6/ABRT
+Nov 15 15:36:58 automation systemd[1]: systemd-networkd.service: Failed with result 'watchdog'.
+Nov 15 15:36:58 automation systemd[1]: systemd-networkd.service: Service has no hold-off time, scheduling restart.
+Nov 15 15:36:58 automation systemd[1]: systemd-networkd.service: Scheduled restart job, restart counter is at 8.
+Nov 15 15:36:58 automation systemd[1]: Stopped Network Service.
+Nov 15 15:36:58 automation systemd[1]: Starting Network Service...
+Nov 15 15:36:58 automation systemd[1]: systemd-timesyncd.service: Main process exited, code=dumped, status=6/ABRT
+Nov 15 15:36:58 automation systemd[1]: systemd-timesyncd.service: Failed with result 'watchdog'.
+Nov 15 15:36:58 automation systemd[1]: systemd-timesyncd.service: Service has no hold-off time, scheduling restart.
+Nov 15 15:36:58 automation systemd[1]: systemd-timesyncd.service: Scheduled restart job, restart counter is at 9.
+Nov 15 15:36:58 automation systemd[1]: Stopped Network Time Synchronization.
+Nov 15 15:36:58 automation systemd[1]: Starting Network Time Synchronization...
+Nov 15 15:36:58 automation systemd-networkd[20101]: enp0s3: Gained IPv6LL
+Nov 15 15:36:58 automation systemd-networkd[20101]: Enumeration completed
+Nov 15 15:36:58 automation systemd[1]: Started Network Service.
+Nov 15 15:36:58 automation systemd-networkd[20101]: enp0s3: IPv6 successfully enabled
+Nov 15 15:36:58 automation systemd-networkd[20101]: lo: Link is not managed by us
+Nov 15 15:36:58 automation systemd[1]: Started Network Time Synchronization.
+Nov 15 15:36:58 automation systemd-networkd[20101]: enp0s3: could not remove route: No such process
+Nov 15 15:36:58 automation systemd-timesyncd[20120]: Network configuration changed, trying to establish connection.
+Nov 15 15:36:59 automation systemd-networkd[20101]: enp0s3: DHCPv4 address 10.0.0.108/24 via 10.0.0.1
+Nov 15 15:36:59 automation systemd-timesyncd[20120]: Network configuration changed, trying to establish connection.
+Nov 15 15:36:59 automation dbus-daemon[1141]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.60' (uid=100 pid=20101 comm="/lib/systemd/systemd-networkd " label="unconfined")
+Nov 15 15:36:59 automation systemd[1]: Starting Hostname Service...
+Nov 15 15:36:59 automation systemd-networkd[20101]: enp0s3: DHCPv6 address 2601:248:600:a840::f54c/128 timeout preferred 604800 valid 604800
+Nov 15 15:36:59 automation dbus-daemon[1141]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Nov 15 15:36:59 automation systemd[1]: Started Hostname Service.
+Nov 15 15:37:00 automation systemd-networkd[20101]: enp0s3: Configured
+Nov 15 15:37:00 automation systemd-timesyncd[20120]: Network configuration changed, trying to establish connection.
+Nov 15 15:37:01 automation systemd[1]: Started Ubuntu Advantage APT and MOTD Messages.
+Nov 15 15:37:03 automation kernel: [256126.590220] e1000: enp0s3 NIC Link is Down
+Nov 15 15:37:04 automation systemd-networkd[20101]: enp0s3: Lost carrier
+Nov 15 15:37:04 automation systemd-networkd[20101]: enp0s3: DHCP lease lost
+Nov 15 15:37:04 automation systemd-networkd[20101]: enp0s3: DHCPv6 lease lost
+Nov 15 15:37:08 automation kernel: [256130.754106] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Nov 15 15:37:08 automation systemd-networkd[20101]: enp0s3: Gained carrier
+Nov 15 15:37:08 automation systemd-timesyncd[20120]: Network configuration changed, trying to establish connection.
+Nov 15 15:37:08 automation systemd-timesyncd[20120]: Network configuration changed, trying to establish connection.
+Nov 15 15:37:08 automation systemd-networkd[20101]: enp0s3: DHCPv6 address 2601:248:600:a840::f54c/128 timeout preferred 604800 valid 604800
+Nov 15 15:37:08 automation systemd-networkd[20101]: enp0s3: DHCPv4 address 10.0.0.108/24 via 10.0.0.1
+Nov 15 15:37:08 automation systemd-timesyncd[20120]: Network configuration changed, trying to establish connection.
+Nov 15 15:37:08 automation systemd-timesyncd[20120]: Network configuration changed, trying to establish connection.
+Nov 15 15:37:10 automation systemd-networkd[20101]: enp0s3: Configured
+Nov 15 15:37:10 automation systemd-timesyncd[20120]: Network configuration changed, trying to establish connection.
+Nov 15 15:37:20 automation systemd-timesyncd[20120]: Timed out waiting for reply from [2620:2d:4000:1::41]:123 (ntp.ubuntu.com).
+Nov 15 15:37:30 automation systemd-timesyncd[20120]: Timed out waiting for reply from [2620:2d:4000:1::3f]:123 (ntp.ubuntu.com).
+Nov 15 15:37:41 automation systemd-timesyncd[20120]: Timed out waiting for reply from [2620:2d:4000:1::40]:123 (ntp.ubuntu.com).
+Nov 17 00:20:14 automation systemd-timesyncd[20120]: Synchronized to time server 185.125.190.56:123 (ntp.ubuntu.com).
+Nov 17 00:20:14 automation systemd[1]: Starting Ubuntu Advantage APT and MOTD Messages...
+Nov 17 00:20:14 automation systemd[1]: Starting Message of the Day...
+Nov 17 00:20:15 automation systemd[1]: Started Ubuntu Advantage APT and MOTD Messages.
+Nov 17 00:25:17 automation 50-motd-news[20450]:  * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+Nov 17 00:25:17 automation 50-motd-news[20450]:    just raised the bar for easy, resilient and secure K8s cluster deployment.
+Nov 17 00:25:17 automation 50-motd-news[20450]:    https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Nov 17 00:25:17 automation systemd[1]: Started Message of the Day.
+Nov 17 00:33:26 automation systemd[1]: Started Session 25 of user paul.
+Nov 17 01:14:18 automation systemd[1]: systemd-timesyncd.service: Watchdog timeout (limit 3min)!
+Nov 17 01:14:18 automation systemd[1]: systemd-timesyncd.service: Killing process 20120 (systemd-timesyn) with signal SIGABRT.
+Nov 17 01:14:19 automation systemd[1]: systemd-timesyncd.service: Main process exited, code=dumped, status=6/ABRT
+Nov 17 01:14:19 automation systemd[1]: systemd-timesyncd.service: Failed with result 'watchdog'.
+Nov 17 01:14:19 automation systemd[1]: systemd-timesyncd.service: Service has no hold-off time, scheduling restart.
+Nov 17 01:14:19 automation systemd[1]: systemd-timesyncd.service: Scheduled restart job, restart counter is at 10.
+Nov 17 01:14:19 automation systemd[1]: Stopped Network Time Synchronization.
+Nov 17 01:14:19 automation systemd[1]: Starting Network Time Synchronization...
+Nov 17 01:36:31 automation kernel: [260741.455419] INFO: rcu_sched self-detected stall on CPU
+Nov 17 01:36:31 automation kernel: [260741.457534] INFO: rcu_sched self-detected stall on CPU
+Nov 17 01:36:31 automation kernel: [260741.528472] 	0-...!: (1 GPs behind) idle=e1e/140000000000001/0 softirq=2192434/2192435 fqs=0 
+Nov 17 01:36:31 automation kernel: [260741.580816] 	 (t=332812 jiffies g=1006426 c=1006425 q=677)
+Nov 17 01:36:31 automation kernel: [260741.580869] 	1-...!: (1 ticks this GP) idle=d7e/140000000000001/0 softirq=2434293/2434293 fqs=0 
+Nov 17 01:36:31 automation kernel: [260741.582074] rcu_sched kthread starved for 332812 jiffies! g1006426 c1006425 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=1
+Nov 17 01:36:31 automation kernel: [260741.582970] 	 (t=332812 jiffies g=1006426 c=1006425 q=677)
+Nov 17 01:36:31 automation kernel: [260741.584708] rcu_sched       I    0     8      2 0x80000000
+Nov 17 01:36:31 automation kernel: [260741.585593] rcu_sched kthread starved for 332812 jiffies! g1006426 c1006425 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=1
+Nov 17 01:36:31 automation kernel: [260741.585594] rcu_sched       I    0     8      2 0x80000000
+Nov 17 01:36:31 automation kernel: [260741.585599] Call Trace:
+Nov 17 01:36:31 automation kernel: [260741.587982] Call Trace:
+Nov 17 01:36:31 automation kernel: [260741.633744]  __schedule+0x24e/0x890
+Nov 17 01:36:31 automation kernel: [260741.633827]  __schedule+0x24e/0x890
+Nov 17 01:36:31 automation kernel: [260741.633831]  schedule+0x2c/0x80
+Nov 17 01:36:31 automation kernel: [260741.633858]  schedule+0x2c/0x80
+Nov 17 01:36:31 automation kernel: [260741.633860]  schedule_timeout+0x15d/0x370
+Nov 17 01:36:31 automation kernel: [260741.633835]  schedule_timeout+0x15d/0x370
+Nov 17 01:36:31 automation kernel: [260741.663857]  ? __next_timer_interrupt+0xe0/0xe0
+Nov 17 01:36:31 automation kernel: [260741.663894]  ? __next_timer_interrupt+0xe0/0xe0
+Nov 17 01:36:31 automation kernel: [260741.664081]  rcu_gp_kthread+0x53a/0x980
+Nov 17 01:36:31 automation kernel: [260741.664532]  kthread+0x121/0x140
+Nov 17 01:36:31 automation kernel: [260741.664537]  ? rcu_note_context_switch+0x150/0x150
+Nov 17 01:36:31 automation kernel: [260741.664514]  rcu_gp_kthread+0x53a/0x980
+Nov 17 01:36:31 automation kernel: [260741.664542]  ? kthread_create_worker_on_cpu+0x70/0x70
+Nov 17 01:36:31 automation kernel: [260741.664518]  kthread+0x121/0x140
+Nov 17 01:36:31 automation kernel: [260741.664520]  ? rcu_note_context_switch+0x150/0x150
+Nov 17 01:36:31 automation kernel: [260741.664521]  ? kthread_create_worker_on_cpu+0x70/0x70
+Nov 17 01:36:31 automation kernel: [260741.664553]  ret_from_fork+0x35/0x40
+Nov 17 01:36:31 automation kernel: [260741.664529]  ret_from_fork+0x35/0x40
+Nov 17 01:36:31 automation kernel: [260741.664585] Sending NMI from CPU 1 to CPUs 0:
+Nov 17 01:36:31 automation kernel: [260741.666835] NMI backtrace for cpu 0
+Nov 17 01:36:31 automation kernel: [260741.666836] CPU: 0 PID: 25678 Comm: python3.7 Tainted: G             L   4.15.0-213-generic #224-Ubuntu
+Nov 17 01:36:31 automation kernel: [260741.666837] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 17 01:36:31 automation kernel: [260741.666837] RIP: 0010:__pv_queued_spin_lock_slowpath+0xee/0x290
+Nov 17 01:36:31 automation kernel: [260741.666838] RSP: 0000:ffff900b3fc03dd0 EFLAGS: 00010002
+Nov 17 01:36:31 automation kernel: [260741.666839] RAX: 0000000000000001 RBX: ffffffffa90aa800 RCX: 0000000000000001
+Nov 17 01:36:31 automation kernel: [260741.666840] RDX: 00000000000065d4 RSI: 0000000000000000 RDI: ffffffffa90aa800
+Nov 17 01:36:31 automation kernel: [260741.666840] RBP: ffff900b3fc03e08 R08: ffffa9fb0035bf48 R09: 0000000000000004
+Nov 17 01:36:31 automation kernel: [260741.666841] R10: 0000000000000001 R11: 0000000000000001 R12: ffff900b3fc27580
+Nov 17 01:36:31 automation kernel: [260741.666841] R13: 0000000000000001 R14: 0000000000000100 R15: 0000000000000000
+Nov 17 01:36:31 automation kernel: [260741.666842] FS:  00007f299510a680(0000) GS:ffff900b3fc00000(0000) knlGS:0000000000000000
+Nov 17 01:36:31 automation kernel: [260741.666843] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Nov 17 01:36:31 automation kernel: [260741.666843] CR2: 00007f2992273024 CR3: 000000002f106000 CR4: 00000000000006f0
+Nov 17 01:36:31 automation kernel: [260741.666843] Call Trace:
+Nov 17 01:36:31 automation kernel: [260741.666844]  <IRQ>
+Nov 17 01:36:31 automation kernel: [260741.666844]  _raw_spin_lock_irqsave+0x37/0x40
+Nov 17 01:36:31 automation kernel: [260741.666845]  rcu_dump_cpu_stacks+0x50/0xd5
+Nov 17 01:36:31 automation kernel: [260741.666845]  rcu_check_callbacks+0x6cd/0x8e0
+Nov 17 01:36:31 automation kernel: [260741.666845]  ? account_user_time+0x9e/0xb0
+Nov 17 01:36:31 automation kernel: [260741.666846]  ? tick_sched_do_timer+0x50/0x50
+Nov 17 01:36:31 automation kernel: [260741.666846]  update_process_times+0x2f/0x60
+Nov 17 01:36:31 automation kernel: [260741.666846]  tick_sched_handle+0x26/0x70
+Nov 17 01:36:31 automation kernel: [260741.666846]  ? tick_sched_do_timer+0x42/0x50
+Nov 17 01:36:31 automation kernel: [260741.666847]  tick_sched_timer+0x39/0x80
+Nov 17 01:36:31 automation kernel: [260741.666847]  __hrtimer_run_queues+0xdf/0x230
+Nov 17 01:36:31 automation kernel: [260741.666847]  hrtimer_interrupt+0x97/0x180
+Nov 17 01:36:31 automation kernel: [260741.666848]  smp_apic_timer_interrupt+0x6f/0x140
+Nov 17 01:36:31 automation kernel: [260741.666848]  apic_timer_interrupt+0x90/0xa0
+Nov 17 01:36:31 automation kernel: [260741.666848]  </IRQ>
+Nov 17 01:36:31 automation kernel: [260741.666848] RIP: 0033:0x4e054f
+Nov 17 01:36:31 automation kernel: [260741.666849] RSP: 002b:00007ffcff4b9428 EFLAGS: 00010206 ORIG_RAX: ffffffffffffff11
+Nov 17 01:36:31 automation kernel: [260741.666875] RAX: 00007f299226ef30 RBX: 00007f299226ef30 RCX: 0000000000727a80
+Nov 17 01:36:31 automation kernel: [260741.666876] RDX: fffffffffffffffc RSI: fffffffffffffffe RDI: 00007f299226ef30
+Nov 17 01:36:31 automation kernel: [260741.666876] RBP: 00007ffcff4b94d8 R08: 0000000000004012 R09: 000000000001bee0
+Nov 17 01:36:31 automation kernel: [260741.666877] R10: 0000000000010000 R11: 0000000000727a80 R12: 00007f2992db4010
+Nov 17 01:36:31 automation kernel: [260741.666877] R13: 0000000000017648 R14: 0000000000017649 R15: 00007f2992e241d0
+Nov 17 01:36:31 automation kernel: [260741.666877] Code: 41 bd 01 00 00 00 41 be 00 01 00 00 3c 02 0f 94 c0 0f b6 c0 48 89 45 c8 41 c6 44 24 44 00 ba 00 80 00 00 c6 43 01 01 eb 0b f3 90 <83> ea 01 0f 84 08 01 00 00 0f b6 03 84 c0 75 ee 44 89 f0 f0 66 
+Nov 17 01:36:31 automation kernel: [260741.666887] NMI backtrace for cpu 1
+Nov 17 01:36:31 automation kernel: [260741.669820] CPU: 1 PID: 2234 Comm: splunkd Tainted: G             L   4.15.0-213-generic #224-Ubuntu
+Nov 17 01:36:31 automation kernel: [260741.669823] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 17 01:36:31 automation kernel: [260741.669824] Call Trace:
+Nov 17 01:36:31 automation kernel: [260741.669826]  <IRQ>
+Nov 17 01:36:31 automation kernel: [260741.669836]  dump_stack+0x6d/0x8b
+Nov 17 01:36:31 automation kernel: [260741.669866]  nmi_cpu_backtrace+0x94/0xa0
+Nov 17 01:36:31 automation kernel: [260741.670007]  ? lapic_can_unplug_cpu+0xb0/0xb0
+Nov 17 01:36:31 automation kernel: [260741.670010]  nmi_trigger_cpumask_backtrace+0xe7/0x130
+Nov 17 01:36:31 automation kernel: [260741.670011]  arch_trigger_cpumask_backtrace+0x19/0x20
+Nov 17 01:36:31 automation kernel: [260741.670014]  rcu_dump_cpu_stacks+0xa3/0xd5
+Nov 17 01:36:31 automation kernel: [260741.670040]  rcu_check_callbacks+0x6cd/0x8e0
+Nov 17 01:36:31 automation kernel: [260741.670045]  ? tick_sched_do_timer+0x50/0x50
+Nov 17 01:36:31 automation kernel: [260741.670047]  update_process_times+0x2f/0x60
+Nov 17 01:36:31 automation kernel: [260741.670048]  tick_sched_handle+0x26/0x70
+Nov 17 01:36:31 automation kernel: [260741.670050]  ? tick_sched_do_timer+0x50/0x50
+Nov 17 01:36:31 automation kernel: [260741.670051]  tick_sched_timer+0x39/0x80
+Nov 17 01:36:31 automation kernel: [260741.670053]  __hrtimer_run_queues+0xdf/0x230
+Nov 17 01:36:31 automation kernel: [260741.670054]  hrtimer_interrupt+0x97/0x180
+Nov 17 01:36:31 automation kernel: [260741.670057]  smp_apic_timer_interrupt+0x6f/0x140
+Nov 17 01:36:31 automation kernel: [260741.670059]  apic_timer_interrupt+0x90/0xa0
+Nov 17 01:36:31 automation kernel: [260741.670061]  </IRQ>
+Nov 17 01:36:31 automation kernel: [260741.671018] RIP: 0010:do_anonymous_page+0x104/0x420
+Nov 17 01:36:31 automation kernel: [260741.671021] RSP: 0000:ffffa9fb01f43d70 EFLAGS: 00010286 ORIG_RAX: ffffffffffffff11
+Nov 17 01:36:31 automation kernel: [260741.671023] RAX: ffffc00000000fff RBX: ffffa9fb01f43dd0 RCX: 0000000000000067
+Nov 17 01:36:31 automation kernel: [260741.671024] RDX: 0000000000000063 RSI: ffff900b386988f8 RDI: 0000000000000063
+Nov 17 01:36:31 automation kernel: [260741.671025] RBP: ffffa9fb01f43db8 R08: 0000000000000000 R09: 0000000000000000
+Nov 17 01:36:31 automation kernel: [260741.671026] R10: 0000000000000000 R11: 0000000000000000 R12: ffff900b30f7a0d0
+Nov 17 01:36:31 automation kernel: [260741.671027] R13: 0000000000000002 R14: 0000000000000001 R15: ffff900b36043180
+Nov 17 01:36:31 automation kernel: [260741.671032]  __handle_mm_fault+0x7da/0xc50
+Nov 17 01:36:31 automation kernel: [260741.671034]  handle_mm_fault+0xe7/0x260
+Nov 17 01:36:31 automation kernel: [260741.671946]  __do_page_fault+0x281/0x4b0
+Nov 17 01:36:31 automation kernel: [260741.673383]  ? do_sys_open+0x13d/0x2c0
+Nov 17 01:36:31 automation kernel: [260741.673391]  do_page_fault+0x2e/0xe0
+Nov 17 01:36:31 automation kernel: [260741.673395]  ? page_fault+0x2f/0x50
+Nov 17 01:36:31 automation kernel: [260741.673396]  page_fault+0x45/0x50
+Nov 17 01:36:31 automation kernel: [260741.673399] RIP: 0033:0x563ed476ccec
+Nov 17 01:36:31 automation kernel: [260741.673400] RSP: 002b:00007f73c13f8730 EFLAGS: 00010293
+Nov 17 01:36:31 automation kernel: [260741.673402] RAX: 00007f73a3800000 RBX: 00000000000f8600 RCX: 00000000003fffff
+Nov 17 01:36:31 automation kernel: [260741.673403] RDX: 00000000000f8600 RSI: 00007f73a6e22e00 RDI: 00000000ffffffff
+Nov 17 01:36:31 automation kernel: [260741.673404] RBP: 0000000000200000 R08: 0000000000000000 R09: 00007f73cd40e240
+Nov 17 01:36:31 automation kernel: [260741.673405] R10: 0000000000000002 R11: 0000000003fb9d3d R12: 0000000000020000
+Nov 17 01:36:31 automation kernel: [260741.673405] R13: 00007f73c76c8200 R14: 0000000000020000 R15: 00007f73c4268ca8
+Nov 17 01:36:31 automation kernel: [260741.674184] NMI backtrace for cpu 0
+Nov 17 01:36:31 automation kernel: [260741.674188] CPU: 0 PID: 25678 Comm: python3.7 Tainted: G             L   4.15.0-213-generic #224-Ubuntu
+Nov 17 01:36:31 automation kernel: [260741.674189] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 17 01:36:31 automation kernel: [260741.674190] Call Trace:
+Nov 17 01:36:31 automation kernel: [260741.674192]  <IRQ>
+Nov 17 01:36:31 automation kernel: [260741.674198]  dump_stack+0x6d/0x8b
+Nov 17 01:36:31 automation kernel: [260741.674202]  nmi_cpu_backtrace+0x94/0xa0
+Nov 17 01:36:31 automation kernel: [260741.674210]  ? lapic_can_unplug_cpu+0xb0/0xb0
+Nov 17 01:36:31 automation kernel: [260741.674212]  nmi_trigger_cpumask_backtrace+0xe7/0x130
+Nov 17 01:36:31 automation kernel: [260741.674213]  arch_trigger_cpumask_backtrace+0x19/0x20
+Nov 17 01:36:31 automation kernel: [260741.674216]  rcu_dump_cpu_stacks+0xa3/0xd5
+Nov 17 01:36:31 automation kernel: [260741.674219]  rcu_check_callbacks+0x6cd/0x8e0
+Nov 17 01:36:31 automation kernel: [260741.674223]  ? account_user_time+0x9e/0xb0
+Nov 17 01:36:31 automation kernel: [260741.674230]  ? tick_sched_do_timer+0x50/0x50
+Nov 17 01:36:31 automation kernel: [260741.674232]  update_process_times+0x2f/0x60
+Nov 17 01:36:31 automation kernel: [260741.674234]  tick_sched_handle+0x26/0x70
+Nov 17 01:36:31 automation kernel: [260741.674235]  ? tick_sched_do_timer+0x42/0x50
+Nov 17 01:36:31 automation kernel: [260741.674236]  tick_sched_timer+0x39/0x80
+Nov 17 01:36:31 automation kernel: [260741.674276]  __hrtimer_run_queues+0xdf/0x230
+Nov 17 01:36:31 automation kernel: [260741.674279]  hrtimer_interrupt+0x97/0x180
+Nov 17 01:36:31 automation kernel: [260741.674282]  smp_apic_timer_interrupt+0x6f/0x140
+Nov 17 01:36:31 automation kernel: [260741.674283]  apic_timer_interrupt+0x90/0xa0
+Nov 17 01:36:31 automation kernel: [260741.674285]  </IRQ>
+Nov 17 01:36:31 automation kernel: [260741.674287] RIP: 0033:0x4e054f
+Nov 17 01:36:31 automation kernel: [260741.674287] RSP: 002b:00007ffcff4b9428 EFLAGS: 00010206 ORIG_RAX: ffffffffffffff11
+Nov 17 01:36:31 automation kernel: [260741.674289] RAX: 00007f299226ef30 RBX: 00007f299226ef30 RCX: 0000000000727a80
+Nov 17 01:36:31 automation kernel: [260741.674290] RDX: fffffffffffffffc RSI: fffffffffffffffe RDI: 00007f299226ef30
+Nov 17 01:36:31 automation kernel: [260741.674291] RBP: 00007ffcff4b94d8 R08: 0000000000004012 R09: 000000000001bee0
+Nov 17 01:36:31 automation kernel: [260741.674291] R10: 0000000000010000 R11: 0000000000727a80 R12: 00007f2992db4010
+Nov 17 01:36:31 automation kernel: [260741.674292] R13: 0000000000017648 R14: 0000000000017649 R15: 00007f2992e241d0
+Nov 17 01:36:31 automation kernel: [260741.674295] Sending NMI from CPU 0 to CPUs 1:
+Nov 17 01:36:31 automation kernel: [260741.678407] NMI backtrace for cpu 1
+Nov 17 01:36:31 automation kernel: [260741.678408] CPU: 1 PID: 2234 Comm: splunkd Tainted: G             L   4.15.0-213-generic #224-Ubuntu
+Nov 17 01:36:31 automation kernel: [260741.678409] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 17 01:36:31 automation kernel: [260741.678409] RIP: 0010:enqueue_entity+0x24/0x6c0
+Nov 17 01:36:31 automation kernel: [260741.678410] RSP: 0000:ffff900b3fd03da8 EFLAGS: 00010082
+Nov 17 01:36:31 automation kernel: [260741.678411] RAX: 0000000000000001 RBX: ffff900b3c1b0a00 RCX: ffff900b3fd03ec0
+Nov 17 01:36:31 automation kernel: [260741.678411] RDX: 0000000000000009 RSI: ffff900b33ffd780 RDI: ffff900b3c1b0a00
+Nov 17 01:36:31 automation kernel: [260741.678412] RBP: ffff900b3fd03de0 R08: 00011031fb8de10c R09: 0000000000000003
+Nov 17 01:36:31 automation kernel: [260741.678412] R10: 0000000000000010 R11: 0000000000000000 R12: ffff900b33ffd780
+Nov 17 01:36:31 automation kernel: [260741.678413] R13: 0000000000000009 R14: 0000000000000009 R15: ffff900b3fd269c0
+Nov 17 01:36:31 automation kernel: [260741.678413] FS:  00007f73c13f9700(0000) GS:ffff900b3fd00000(0000) knlGS:0000000000000000
+Nov 17 01:36:31 automation kernel: [260741.678414] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Nov 17 01:36:31 automation kernel: [260741.678414] CR2: 00007f73a3fc3000 CR3: 000000007606e000 CR4: 00000000000006e0
+Nov 17 01:36:31 automation kernel: [260741.678415] Call Trace:
+Nov 17 01:36:31 automation kernel: [260741.678415]  <IRQ>
+Nov 17 01:36:31 automation kernel: [260741.678415]  enqueue_task_fair+0x71/0x9e0
+Nov 17 01:36:31 automation kernel: [260741.678416]  activate_task+0x54/0xc0
+Nov 17 01:36:31 automation kernel: [260741.678416]  ? sched_clock+0x9/0x10
+Nov 17 01:36:31 automation kernel: [260741.678417]  ttwu_do_activate+0x49/0x80
+Nov 17 01:36:31 automation kernel: [260741.678417]  try_to_wake_up+0x1db/0x4b0
+Nov 17 01:36:31 automation kernel: [260741.678417]  ? __hrtimer_init+0xc0/0xc0
+Nov 17 01:36:31 automation kernel: [260741.678418]  wake_up_process+0x15/0x20
+Nov 17 01:36:31 automation kernel: [260741.678418]  hrtimer_wakeup+0x22/0x30
+Nov 17 01:36:31 automation kernel: [260741.678418]  __hrtimer_run_queues+0xdf/0x230
+Nov 17 01:36:31 automation kernel: [260741.678419]  hrtimer_interrupt+0x97/0x180
+Nov 17 01:36:31 automation kernel: [260741.678419]  smp_apic_timer_interrupt+0x6f/0x140
+Nov 17 01:36:31 automation kernel: [260741.678420]  apic_timer_interrupt+0x90/0xa0
+Nov 17 01:36:31 automation kernel: [260741.678420]  </IRQ>
+Nov 17 01:36:31 automation kernel: [260741.678421] RIP: 0010:do_anonymous_page+0x104/0x420
+Nov 17 01:36:31 automation kernel: [260741.678421] RSP: 0000:ffffa9fb01f43d70 EFLAGS: 00010286 ORIG_RAX: ffffffffffffff11
+Nov 17 01:36:31 automation kernel: [260741.678422] RAX: ffffc00000000fff RBX: ffffa9fb01f43dd0 RCX: 0000000000000067
+Nov 17 01:36:31 automation kernel: [260741.678422] RDX: 0000000000000063 RSI: ffff900b386988f8 RDI: 0000000000000063
+Nov 17 01:36:31 automation kernel: [260741.678423] RBP: ffffa9fb01f43db8 R08: 0000000000000000 R09: 0000000000000000
+Nov 17 01:36:31 automation kernel: [260741.678423] R10: 0000000000000000 R11: 0000000000000000 R12: ffff900b30f7a0d0
+Nov 17 01:36:31 automation kernel: [260741.678423] R13: 0000000000000002 R14: 0000000000000001 R15: ffff900b36043180
+Nov 17 01:36:31 automation kernel: [260741.678424]  __handle_mm_fault+0x7da/0xc50
+Nov 17 01:36:31 automation kernel: [260741.678424]  handle_mm_fault+0xe7/0x260
+Nov 17 01:36:31 automation kernel: [260741.678424]  __do_page_fault+0x281/0x4b0
+Nov 17 01:36:31 automation kernel: [260741.678425]  ? do_sys_open+0x13d/0x2c0
+Nov 17 01:36:31 automation kernel: [260741.678425]  do_page_fault+0x2e/0xe0
+Nov 17 01:36:31 automation kernel: [260741.678425]  ? page_fault+0x2f/0x50
+Nov 17 01:36:31 automation kernel: [260741.678425]  page_fault+0x45/0x50
+Nov 17 01:36:31 automation kernel: [260741.678426] RIP: 0033:0x563ed476ccec
+Nov 17 01:36:31 automation kernel: [260741.678426] RSP: 002b:00007f73c13f8730 EFLAGS: 00010293
+Nov 17 01:36:31 automation kernel: [260741.678427] RAX: 00007f73a3800000 RBX: 00000000000f8600 RCX: 00000000003fffff
+Nov 17 01:36:31 automation kernel: [260741.678427] RDX: 00000000000f8600 RSI: 00007f73a6e22e00 RDI: 00000000ffffffff
+Nov 17 01:36:31 automation kernel: [260741.678428] RBP: 0000000000200000 R08: 0000000000000000 R09: 00007f73cd40e240
+Nov 17 01:36:31 automation kernel: [260741.678428] R10: 0000000000000002 R11: 0000000003fb9d3d R12: 0000000000020000
+Nov 17 01:36:31 automation kernel: [260741.678428] R13: 00007f73c76c8200 R14: 0000000000020000 R15: 00007f73c4268ca8
+Nov 17 01:36:31 automation kernel: [260741.678428] Code: 1f 84 00 00 00 00 00 0f 1f 44 00 00 55 89 d0 83 e0 41 48 89 e5 41 57 41 56 41 55 41 54 49 89 f4 53 41 89 d6 48 89 fb 48 83 ec 10 <4c> 8b 6f 40 83 f8 01 41 0f 95 c7 49 39 f5 0f 85 21 01 00 00 45 
+Nov 17 01:36:32 automation systemd[1]: systemd-timesyncd.service: Start operation timed out. Terminating.
+Nov 17 01:36:32 automation systemd[1]: systemd-resolved.service: Watchdog timeout (limit 3min)!
+Nov 17 01:36:32 automation systemd[1]: systemd-resolved.service: Killing process 9600 (systemd-resolve) with signal SIGABRT.
+Nov 17 01:36:32 automation systemd[1]: systemd-networkd.service: Watchdog timeout (limit 3min)!
+Nov 17 01:36:32 automation systemd[1]: systemd-networkd.service: Killing process 20101 (systemd-network) with signal SIGABRT.
+Nov 17 01:36:32 automation systemd[1]: systemd-udevd.service: Watchdog timeout (limit 3min)!
+Nov 17 01:36:32 automation systemd[1]: systemd-udevd.service: Killing process 18985 (systemd-udevd) with signal SIGABRT.
+Nov 17 01:36:32 automation systemd[1]: systemd-logind.service: Watchdog timeout (limit 3min)!
+Nov 17 01:36:32 automation systemd[1]: systemd-logind.service: Killing process 18997 (systemd-logind) with signal SIGABRT.
+Nov 17 01:36:32 automation systemd[1]: systemd-timesyncd.service: Failed with result 'timeout'.
+Nov 17 01:36:32 automation systemd[1]: Failed to start Network Time Synchronization.
+Nov 17 01:36:32 automation systemd[1]: systemd-timesyncd.service: Service has no hold-off time, scheduling restart.
+Nov 17 01:36:32 automation systemd[1]: systemd-timesyncd.service: Scheduled restart job, restart counter is at 11.
+Nov 17 01:36:32 automation systemd[1]: Stopped Network Time Synchronization.
+Nov 17 01:36:32 automation systemd[1]: Starting Network Time Synchronization...
+Nov 17 01:36:32 automation systemd[1]: systemd-resolved.service: Main process exited, code=dumped, status=6/ABRT
+Nov 17 01:36:32 automation systemd[1]: systemd-resolved.service: Failed with result 'watchdog'.
+Nov 17 01:36:32 automation systemd[1]: systemd-udevd.service: Main process exited, code=dumped, status=6/ABRT
+Nov 17 01:36:32 automation systemd[1]: systemd-udevd.service: Failed with result 'watchdog'.
+Nov 17 01:36:32 automation systemd[1]: systemd-networkd.service: Main process exited, code=dumped, status=6/ABRT
+Nov 17 01:36:32 automation systemd[1]: systemd-networkd.service: Failed with result 'watchdog'.
+Nov 17 01:36:32 automation systemd[1]: systemd-resolved.service: Service has no hold-off time, scheduling restart.
+Nov 17 01:36:32 automation systemd[1]: systemd-resolved.service: Scheduled restart job, restart counter is at 7.
+Nov 17 01:36:32 automation systemd[1]: systemd-udevd.service: Service has no hold-off time, scheduling restart.
+Nov 17 01:36:32 automation systemd[1]: systemd-udevd.service: Scheduled restart job, restart counter is at 14.
+Nov 17 01:36:32 automation systemd[1]: systemd-networkd.service: Service has no hold-off time, scheduling restart.
+Nov 17 01:36:32 automation systemd[1]: systemd-networkd.service: Scheduled restart job, restart counter is at 9.
+Nov 17 01:36:32 automation systemd[1]: Stopped Network Name Resolution.
+Nov 17 01:36:32 automation systemd[1]: Stopped Network Service.
+Nov 17 01:36:32 automation systemd[1]: Stopped udev Kernel Device Manager.
+Nov 17 01:36:32 automation systemd[1]: Starting udev Kernel Device Manager...
+Nov 17 01:36:32 automation systemd[1]: systemd-logind.service: Main process exited, code=dumped, status=6/ABRT
+Nov 17 01:36:32 automation systemd[1]: systemd-logind.service: Failed with result 'watchdog'.
+Nov 17 01:36:32 automation systemd[1]: systemd-logind.service: Service has no hold-off time, scheduling restart.
+Nov 17 01:36:32 automation systemd[1]: systemd-logind.service: Scheduled restart job, restart counter is at 11.
+Nov 17 01:36:32 automation systemd[1]: Stopped Login Service.
+Nov 17 01:36:32 automation systemd[1]: Starting Login Service...
+Nov 17 01:36:32 automation systemd[1]: Started Network Time Synchronization.
+Nov 17 01:36:33 automation systemd[1]: Started udev Kernel Device Manager.
+Nov 17 01:36:33 automation systemd[1]: Starting Network Service...
+Nov 17 01:36:33 automation systemd[1]: Started Login Service.
+Nov 17 01:36:33 automation systemd-networkd[25732]: enp0s3: Gained IPv6LL
+Nov 17 01:36:33 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:33 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:33 automation systemd-networkd[25732]: Enumeration completed
+Nov 17 01:36:33 automation systemd[1]: Started Network Service.
+Nov 17 01:36:33 automation systemd[1]: Starting Network Name Resolution...
+Nov 17 01:36:33 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:33 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:33 automation systemd-networkd[25732]: enp0s3: IPv6 successfully enabled
+Nov 17 01:36:33 automation systemd-networkd[25732]: lo: Link is not managed by us
+Nov 17 01:36:33 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:33 automation systemd-networkd[25732]: enp0s3: could not remove route: No such process
+Nov 17 01:36:33 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:33 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:33 automation systemd-networkd[25732]: enp0s3: DHCPv4 address 10.0.0.108/24 via 10.0.0.1
+Nov 17 01:36:33 automation dbus-daemon[1141]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.65' (uid=100 pid=25732 comm="/lib/systemd/systemd-networkd " label="unconfined")
+Nov 17 01:36:33 automation systemd-networkd[25732]: enp0s3: Configured
+Nov 17 01:36:33 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:33 automation systemd[1]: Starting Hostname Service...
+Nov 17 01:36:33 automation systemd-resolved[25743]: Positive Trust Anchors:
+Nov 17 01:36:33 automation systemd-resolved[25743]: . IN DS 19036 8 2 49aac11d7b6f6446702e54a1607371607a1a41855200fd2ce1cdde32f24e8fb5
+Nov 17 01:36:33 automation systemd-resolved[25743]: . IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
+Nov 17 01:36:33 automation systemd-resolved[25743]: Negative trust anchors: 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 24.172.in-addr.arpa 25.172.in-addr.arpa 26.172.in-addr.arpa 27.172.in-addr.arpa 28.172.in-addr.arpa 29.172.in-addr.arpa 30.172.in-addr.arpa 31.172.in-addr.arpa 168.192.in-addr.arpa d.f.ip6.arpa corp home internal intranet lan local private test
+Nov 17 01:36:33 automation systemd-resolved[25743]: Using system hostname 'automation'.
+Nov 17 01:36:33 automation systemd[1]: Started Network Name Resolution.
+Nov 17 01:36:33 automation systemd-networkd[25732]: enp0s3: DHCPv6 address 2601:248:600:a840::f54c/128 timeout preferred 604800 valid 604800
+Nov 17 01:36:33 automation dbus-daemon[1141]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Nov 17 01:36:33 automation systemd[1]: Started Hostname Service.
+Nov 17 01:36:35 automation kernel: [260745.778325] e1000: enp0s3 NIC Link is Down
+Nov 17 01:36:35 automation systemd-networkd[25732]: enp0s3: Lost carrier
+Nov 17 01:36:35 automation systemd-networkd[25732]: enp0s3: DHCP lease lost
+Nov 17 01:36:36 automation systemd-networkd[25732]: enp0s3: DHCPv6 lease lost
+Nov 17 01:36:42 automation kernel: [260751.916246] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Nov 17 01:36:42 automation systemd-networkd[25732]: enp0s3: Gained carrier
+Nov 17 01:36:42 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:46 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:47 automation systemd-networkd[25732]: enp0s3: DHCPv6 address 2601:248:600:a840::f54c/128 timeout preferred 604800 valid 604800
+Nov 17 01:36:47 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:47 automation systemd-networkd[25732]: enp0s3: DHCPv4 address 10.0.0.108/24 via 10.0.0.1
+Nov 17 01:36:47 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:36:48 automation systemd-networkd[25732]: enp0s3: Configured
+Nov 17 01:36:48 automation systemd-timesyncd[25708]: Network configuration changed, trying to establish connection.
+Nov 17 01:37:29 automation systemd-timesyncd[25708]: Timed out waiting for reply from [2620:2d:4000:1::3f]:123 (ntp.ubuntu.com).
+Nov 17 01:37:39 automation systemd-timesyncd[25708]: Timed out waiting for reply from [2620:2d:4000:1::41]:123 (ntp.ubuntu.com).
+Nov 17 01:37:49 automation systemd-timesyncd[25708]: Timed out waiting for reply from [2620:2d:4000:1::40]:123 (ntp.ubuntu.com).
+Nov 17 18:12:35 automation systemd-timesyncd[25708]: Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+Nov 17 18:12:36 automation systemd[1]: Starting Message of the Day...
+Nov 17 18:12:36 automation systemd[1]: Starting Ubuntu Advantage APT and MOTD Messages...
+Nov 17 18:12:39 automation systemd[1]: Started Ubuntu Advantage APT and MOTD Messages.
+Nov 17 18:17:02 automation CRON[27347]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 18:17:41 automation 50-motd-news[26113]:  * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+Nov 17 18:17:41 automation 50-motd-news[26113]:    just raised the bar for easy, resilient and secure K8s cluster deployment.
+Nov 17 18:17:41 automation 50-motd-news[26113]:    https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Nov 17 18:17:41 automation systemd[1]: Started Message of the Day.
+Nov 17 18:19:23 automation systemd[1]: Started Session 27 of user paul.
